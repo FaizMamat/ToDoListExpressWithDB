@@ -1,17 +1,17 @@
 {
    "type": "postgres",
-   "host": "localhost",
+   "host": "ec2-174-129-18-42.compute-1.amazonaws.com",
    "port": 5432,
-   "username": "postgres",
-   "password": "postgres",
-   "database": "expressdb",
+   "username": "fvgvvvgetwpnxb",
+   "password": "2f9a7d284d9bbd3d8901dd2d71a33d9825f1bc796efbec104cfe2259721c0aa6",
+   "database": "d33k016i1g2alk",
    "synchronize": true,
    "logging": false,
    "entities": [
-      "src/entity/**/*.ts"
+      "build/entity/**{.ts,.js}"
    ],
    "migrations": [
-      "src/migration/**/*.ts"
+      "build/migration/**{.ts,.js}"
    ],
    "subscribers": [
       "src/subscriber/**/*.ts"
