@@ -1,0 +1,6 @@
+2019-09-29 00:00:58.753 +08 [36464] LOG:  listening on IPv6 address "::1", port 5432
+2019-09-29 00:00:58.753 +08 [36464] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2019-09-29 00:00:59.214 +08 [36824] LOG:  database system was shut down at 2019-09-29 00:00:25 +08
+2019-09-29 00:00:59.443 +08 [36464] LOG:  database system is ready to accept connections
+2019-09-29 00:12:12.580 +08 [52772] LOG:  using stale statistics instead of current ones because stats collector is not responding
+2019-09-29 00:12:41.972 +08 [51164] LOG:  using stale statistics instead of current ones because stats collector is not responding
