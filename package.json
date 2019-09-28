@@ -14,7 +14,10 @@
       "express": "^4.15.4",
       "body-parser": "^1.18.1"
    },
-   "scripts": {
+      "scripts": {
+      "build-ts": "tsc",
+      "postinstall": "npm run build-ts",
       "start": "ts-node src/index.ts"
+       }
    }
-}
+

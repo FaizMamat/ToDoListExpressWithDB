@@ -11,13 +11,20 @@ export class ListToDoController {
     }
 
     async one(request: Request, response: Response, next: NextFunction) {
+        let todos = await this.todoRepository.findOne(request.params.id);
+        if( todos ){
+            return todos
+        } else {
+            response.send("No to do list available")
+        }
+        
         return this.todoRepository.findOne(request.params.id);
     }
 
     async addNew(request: Request, response: Response, next: NextFunction) {
         return this.todoRepository.save({
             description: request.body.description,
-            completed: false,
+            completed: request.body.completed,
             create_date: new Date(),
             complete_date: new Date('1990-01-01'),
             notes: request.body.notes,
