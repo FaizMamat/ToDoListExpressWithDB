@@ -6,3 +6,16 @@
 2019-09-29 00:12:41.972 +08 [51164] LOG:  using stale statistics instead of current ones because stats collector is not responding
 2019-09-29 01:48:41.716 +08 [14292] LOG:  could not receive data from client: An existing connection was forcibly closed by the remote host.
 	
+2019-09-29 02:02:05.467 +08 [37824] ERROR:  relation "user" already exists
+2019-09-29 02:02:05.467 +08 [37824] STATEMENT:  CREATE TABLE "user" ("id" SERIAL NOT NULL, "firstName" character varying NOT NULL, "lastName" character varying NOT NULL, "age" integer NOT NULL, CONSTRAINT "PK_cace4a159ff9f2512dd42373760" PRIMARY KEY ("id"))
+2019-09-29 02:16:31.236 +08 [36464] LOG:  worker process: logical replication launcher (PID 27244) was terminated by exception 0xC000013A
+2019-09-29 02:16:31.236 +08 [36464] HINT:  See C include file "ntstatus.h" for a description of the hexadecimal value.
+2019-09-29 02:16:31.236 +08 [36464] LOG:  terminating any other active server processes
+2019-09-29 02:16:31.275 +08 [51164] WARNING:  terminating connection because of crash of another server process
+2019-09-29 02:16:31.275 +08 [51164] DETAIL:  The postmaster has commanded this server process to roll back the current transaction and exit, because another server process exited abnormally and possibly corrupted shared memory.
+2019-09-29 02:16:31.275 +08 [51164] HINT:  In a moment you should be able to reconnect to the database and repeat your command.
+2019-09-29 02:16:31.388 +08 [36464] LOG:  statistics collector process (PID 53040) was terminated by exception 0xC000013A
+2019-09-29 02:16:31.388 +08 [36464] HINT:  See C include file "ntstatus.h" for a description of the hexadecimal value.
+2019-09-29 02:16:31.401 +08 [36464] LOG:  all server processes terminated; reinitializing
+2019-09-29 02:16:33.673 +08 [36464] LOG:  received fast shutdown request
+^C
