@@ -68,13 +68,13 @@ export const Routes = [
 },
 {
     method: "get",
-    route: "/todos/",
+    route: "/todos/personal",
     controller: ListToDoController,
     action: "filterPersonal"
 },
 {
     method: "get",
-    route: "/todos",
+    route: "/todos/work",
     controller: ListToDoController,
     action: "filterWork"
 },
