@@ -74,7 +74,7 @@ export const Routes = [
 },
 {
     method: "get",
-    route: "/todos/work",
+    route: "/todosWork",
     controller: ListToDoController,
     action: "filterWork"
 },

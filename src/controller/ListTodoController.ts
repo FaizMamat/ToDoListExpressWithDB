@@ -66,18 +66,25 @@ export class ListToDoController {
     }
 
     async filterPersonal(request: Request, response: Response, next: NextFunction) {
-        let workTask = await this.todoRepository.find({category: "Personal"});
+        let PersonalList = await this.todoRepository.find({category: "Personal"});
+        if( PersonalList ){
+            return PersonalList
+        } else {
+            response.send("No to do list available")
+        }
+        
+
         response.send(workTask);  
     }
     
     async filterWork(request: Request, response: Response, next: NextFunction) {
-        let workTask = await this.todoRepository.find({category: "Work"});
-        response.send(workTask);
+        let workList = await this.todoRepository.find({category: "Work"});
+        response.send(workList);
     }
 
     async filterFamily(request: Request, response: Response, next: NextFunction) {
-        let familyTask = await this.todoRepository.find({category: "Family"});
-        response.send(familyTask);
+        let familyList = await this.todoRepository.find({category: "Family"});
+        response.send(familyList);
     }
 
 }
