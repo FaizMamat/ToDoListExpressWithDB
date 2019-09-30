@@ -43,7 +43,7 @@ export class ListToDoController {
         if (taskComplete.completed === false){
             await getConnection()
             .createQueryBuilder()
-            .update(ListToDo).set({completed: true, completed_at: new Date()})
+            .update(ListToDo).set({completed: true, complete_date: new Date()})
             .where("id = :id and completed = :completed", {id: taskComplete.id , completed: taskComplete.completed})
             .execute();  
             response.send("Selected Todo list marked as Completed");
