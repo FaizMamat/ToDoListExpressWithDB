@@ -66,23 +66,23 @@ export class ListToDoController {
     }
 
     async filterPersonal(request: Request, response: Response, next: NextFunction) {
-        let personalTask = await this.todoRepository.find({category: "Personal"});
+        let personalTask = await this.todoRepository.findOne({category: "Personal"});
         response.send(personalTask);
-        let familyTask = await this.todoRepository.find({category: "Family"});
+        let familyTask = await this.todoRepository.findOne({category: "Family"});
         response.send(familyTask);
-        let workTask = await this.todoRepository.find({category: "Work"});
+        let workTask = await this.todoRepository.findOne({category: "Work"});
         response.send(workTask);
 
     }
     
-    async filterWork(request: Request, response: Response, next: NextFunction) {
-        let workTask = await this.todoRepository.find({category: "Work"});
-        response.send(workTask);
-    }
+    // async filterWork(request: Request, response: Response, next: NextFunction) {
+    //     let workTask = await this.todoRepository.findOne({category: "Work"});
+    //     response.send(workTask);
+    // }
 
-    async filterFamily(request: Request, response: Response, next: NextFunction) {
-        let familyTask = await this.todoRepository.find({category: "Family"});
-        response.send(familyTask);
-    }
+    // async filterFamily(request: Request, response: Response, next: NextFunction) {
+    //     let familyTask = await this.todoRepository.findOne({category: "Family"});
+    //     response.send(familyTask);
+    // }
 
 }
