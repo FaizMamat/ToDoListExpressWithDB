@@ -24,9 +24,8 @@ export class ListToDoController {
     async addNew(request: Request, response: Response, next: NextFunction) {
         return this.todoRepository.save({
             description: request.body.description,
-            completed: request.body.completed,
+            completed: false,
             create_date: new Date(),
-            complete_date: new Date(),
             notes: request.body.notes,
             category: request.body.category,
         });
