@@ -1,4 +1,4 @@
-import {getRepository} from "typeorm";
+import {getRepository,getConnection} from "typeorm";
 import {NextFunction, Request, Response} from "express";
 import {ListToDo} from "../entity/ListToDo";
 
