@@ -15,7 +15,11 @@ export class UserController {
     }
 
     async save(request: Request, response: Response, next: NextFunction) {
-        return this.userRepository.save(request.body);
+        return this.userRepository.save({
+        firstName: request.body.firstName,
+        lastName: request.body.lastName,
+        age: request.body.age
+        });
     }
 
     async remove(request: Request, response: Response, next: NextFunction) {
