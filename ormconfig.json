@@ -1,10 +1,10 @@
 {
    "type": "postgres",
-   "host": "ec2-174-129-18-42.compute-1.amazonaws.com",
+   "host": "ec2-23-21-156-171.compute-1.amazonaws.com",
    "port": 5432,
-   "username": "fvgvvvgetwpnxb",
-   "password": "2f9a7d284d9bbd3d8901dd2d71a33d9825f1bc796efbec104cfe2259721c0aa6",
-   "database": "d33k016i1g2alk",
+   "username": "ycwjvmnrnxfdkz",
+   "password": "f06faa3dcbd53c546c00825a4e05a7c91221cc30053678f5d59f6e9ea1131db6",
+   "database": "d73v7k1atnamo6",
    "synchronize": true,
    "logging": false,
    "entities": [
