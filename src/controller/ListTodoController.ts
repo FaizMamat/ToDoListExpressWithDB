@@ -66,16 +66,13 @@ export class ListToDoController {
     }
 
     async filterPersonal(request: Request, response: Response, next: NextFunction) {
-        let result =[]
+
         let categories = await this.todoRepository.find(request.params.category);
         if( categories===request.query.category){
-            result.push(categories)
+            return categories
         } else {
             return this.todoRepository.find();
         }
-        
-        response.json(result)
-
     }
     
     async filterWork(request: Request, response: Response, next: NextFunction) {
