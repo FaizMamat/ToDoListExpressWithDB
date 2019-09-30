@@ -26,7 +26,7 @@ export class ListToDoController {
             description: request.body.description,
             completed: request.body.completed,
             create_date: new Date(),
-            complete_date: new Date('1990-01-01'),
+            complete_date: new Date(),
             notes: request.body.notes,
             category: request.body.category,
         });
