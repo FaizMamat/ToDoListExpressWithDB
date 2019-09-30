@@ -74,7 +74,7 @@ export class ListToDoController {
         }
         
 
-        response.send(workTask);  
+        response.send(PersonalList);  
     }
     
     async filterWork(request: Request, response: Response, next: NextFunction) {
