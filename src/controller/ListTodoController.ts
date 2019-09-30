@@ -79,4 +79,5 @@ export class ListToDoController {
         let familyTask = await this.todoRepository.find({category: "Family"});
         response.send(familyTask);
     }
+
 }
