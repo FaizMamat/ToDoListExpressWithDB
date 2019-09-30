@@ -6,9 +6,9 @@ export class ListToDoController {
 
     private todoRepository = getRepository(ListToDo);
 
-    async all(request: Request, response: Response, next: NextFunction) {
-        return this.todoRepository.find();
-    }
+    // async all(request: Request, response: Response, next: NextFunction) {
+    //     return this.todoRepository.find();
+    // }
 
     async one(request: Request, response: Response, next: NextFunction) {
         let todos = await this.todoRepository.findOne(request.params.id);
@@ -71,21 +71,21 @@ export class ListToDoController {
         if( categories===request.query.category){
             result.push(categories)
         } else {
-            response.send("No to do list available")
+            return this.todoRepository.find();
         }
         
-        return this.todoRepository.findOne(request.params.category);
+        response.json(result)
 
     }
     
-    // async filterWork(request: Request, response: Response, next: NextFunction) {
-    //     let workTask = await this.todoRepository.findOne({category: "Work"});
-    //     response.send(workTask);
-    // }
+    async filterWork(request: Request, response: Response, next: NextFunction) {
+        let workTask = await this.todoRepository.find({category: "Work"});
+        response.send(workTask);
+    }
 
-    // async filterFamily(request: Request, response: Response, next: NextFunction) {
-    //     let familyTask = await this.todoRepository.findOne({category: "Family"});
-    //     response.send(familyTask);
-    // }
+    async filterFamily(request: Request, response: Response, next: NextFunction) {
+        let familyTask = await this.todoRepository.find({category: "Family"});
+        response.send(familyTask);
+    }
 
 }
