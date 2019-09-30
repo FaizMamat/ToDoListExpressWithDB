@@ -6,9 +6,9 @@ export class ListToDoController {
 
     private todoRepository = getRepository(ListToDo);
 
-    // async all(request: Request, response: Response, next: NextFunction) {
-    //     return this.todoRepository.find();
-    // }
+    async all(request: Request, response: Response, next: NextFunction) {
+        return this.todoRepository.find();
+    }
 
     async one(request: Request, response: Response, next: NextFunction) {
         let todos = await this.todoRepository.findOne(request.params.id);
@@ -71,7 +71,7 @@ export class ListToDoController {
         if(workTask){
             return workTask
         } else {
-            return this.todoRepository.find();
+            response.send("No to do list available")
         }
     }
     
