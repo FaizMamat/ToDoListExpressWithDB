@@ -40,7 +40,7 @@ export class ListToDoController {
     async markComplete(request: Request, response: Response, next: NextFunction) {
         let taskComplete = await this.todoRepository.findOne(request.params.id);
         
-        if (taskComplete.completed === false){
+        if (taskComplete.completed === true){
             taskComplete.completed = true;
             taskComplete.complete_date = new Date();
             response.send("Item updated to complete");
