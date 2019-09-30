@@ -80,7 +80,7 @@ export const Routes = [
 },
 {
     method: "get",
-    route: "/todos",
+    route: "/todosFamily",
     controller: ListToDoController,
     action: "filterFamily"
 }
