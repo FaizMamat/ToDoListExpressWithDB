@@ -6,9 +6,9 @@ export class ListToDoController {
 
     private todoRepository = getRepository(ListToDo);
 
-    async all(request: Request, response: Response, next: NextFunction) {
-        return this.todoRepository.find();
-    }
+    // async all(request: Request, response: Response, next: NextFunction) {
+    //     return this.todoRepository.find();
+    // }
 
     async one(request: Request, response: Response, next: NextFunction) {
         let todos = await this.todoRepository.findOne(request.params.id);
@@ -68,6 +68,11 @@ export class ListToDoController {
     async filterPersonal(request: Request, response: Response, next: NextFunction) {
         let personalTask = await this.todoRepository.find({category: "Personal"});
         response.send(personalTask);
+        let familyTask = await this.todoRepository.find({category: "Family"});
+        response.send(familyTask);
+        let workTask = await this.todoRepository.find({category: "Work"});
+        response.send(workTask);
+
     }
     
     async filterWork(request: Request, response: Response, next: NextFunction) {
@@ -76,7 +81,7 @@ export class ListToDoController {
     }
 
     async filterFamily(request: Request, response: Response, next: NextFunction) {
-        let familyTask = await this.todoRepository.find({category: "familyTask"});
+        let familyTask = await this.todoRepository.find({category: "Family"});
         response.send(familyTask);
     }
 

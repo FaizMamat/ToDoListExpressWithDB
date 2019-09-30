@@ -27,12 +27,13 @@ export const Routes = [
     action: "remove"
 },
 
-{   
-    method: "get",
-    route: "/todos",
-    controller: ListToDoController,
-    action: "all"
-}, {
+// {   
+//     method: "get",
+//     route: "/todos",
+//     controller: ListToDoController,
+//     action: "all"
+// }, 
+{
     method: "get",
     route: "/todos/:id",
     controller: ListToDoController,
@@ -73,13 +74,13 @@ export const Routes = [
 },
 {
     method: "get",
-    route: "/todoswork",
+    route: "/todos",
     controller: ListToDoController,
     action: "filterWork"
 },
 {
     method: "get",
-    route: "/todosfamily",
+    route: "/todos",
     controller: ListToDoController,
     action: "filterFamily"
 }
