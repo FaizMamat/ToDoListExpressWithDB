@@ -25,8 +25,8 @@ export class ListToDoController {
         return this.todoRepository.save({
             description: request.body.description,
             completed: false,
-            created_at: new Date(),
-            completed_at: new Date("2000-01-01"),
+            create_at: new Date(),
+            complete_at: new Date('2000-01-01'),
             notes: request.body.notes,
             category: request.body.category,
         });
