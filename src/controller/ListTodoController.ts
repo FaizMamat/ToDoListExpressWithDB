@@ -40,14 +40,15 @@ export class ListToDoController {
     async markComplete(request: Request, response: Response, next: NextFunction) {
         let taskComplete = await this.todoRepository.findOne(request.params.id);
         
-        if (taskComplete.completed === true){
-            taskComplete.completed = true;
-            taskComplete.complete_date = new Date();
-            response.send("Item updated to complete");
-            return this.todoRepository.save(taskComplete);
-            
+        if (taskComplete.completed === false){
+            await getConnection()
+            .createQueryBuilder()
+            .update(ListToDo).set({completed: true, completed_at: new Date()})
+            .where("id = :id and completed = :completed", {id: taskComplete.id , completed: taskComplete.completed})
+            .execute();  
+            response.send("Selected Todo list marked as Completed");
         } else {
-            response.send("This item is already complete")
+        response.send("Selected Todo list is already in Completed status"); 
         }
     }
 
