@@ -27,12 +27,12 @@ export const Routes = [
     action: "remove"
 },
 
-// {   
-//     method: "get",
-//     route: "/todos",
-//     controller: ListToDoController,
-//     action: "all"
-// }, 
+{   
+    method: "get",
+    route: "/todos",
+    controller: ListToDoController,
+    action: "all"
+}, 
 {
     method: "get",
     route: "/todos/:id",
