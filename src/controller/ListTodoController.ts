@@ -67,13 +67,6 @@ export class ListToDoController {
 
     async filterPersonal(request: Request, response: Response, next: NextFunction) {
         let PersonalList = await this.todoRepository.find({category: "Personal"});
-        if( PersonalList ){
-            return PersonalList
-        } else {
-            response.send("No to do list available")
-        }
-        
-
         response.send(PersonalList);  
     }
     
