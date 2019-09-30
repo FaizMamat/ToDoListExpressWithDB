@@ -68,7 +68,7 @@ export const Routes = [
 },
 {
     method: "get",
-    route: "/todos",
+    route: "/todos/",
     controller: ListToDoController,
     action: "filterPersonal"
 },
